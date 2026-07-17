@@ -1,6 +1,6 @@
+# Predefined responses for the rule-based chatbot
 
 responses = {
-    
     
     "hello": "Hello! 👋 How can I help you today?",
     "hi": "Hi there! 😊",
@@ -27,8 +27,7 @@ responses = {
     - who made you
     - tell me a joke
     - exit
-    """
-    
+    """ 
 }
 
 print("=" * 50)
@@ -37,17 +36,26 @@ print("=" * 50)
 print("Hello! I'm your Rule-Based AI Chatbot.")
 print("I can respond to a set of predefined commands.")
 print("\nType 'help' to see the available commands.")
-print("Type 'exit")
+print("Type exit to end the conversation.")
 
 
+
+# Start the chatbot conversation
 
 while True:
     
-    user_input = input("Enter Text : ")
+    user_input = input("\nYou : ")
+    
+    # Normalize input to make matching case-insensitive
+    
     clean_input = user_input.lower().strip()
     
+    
     if clean_input == "exit": 
+        print("\nBot: Thank you for chatting with me. Goodbye! 👋")
         break
     else:
-        reply = responses.get(clean_input , "Invalid Entery")
-        print(reply)
+        
+        reply = responses.get(clean_input , "Sorry, I don't understand that. Type 'help' to see the available commands.")
+        print(f"Bot : {reply}")
+ 
